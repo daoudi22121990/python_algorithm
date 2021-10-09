@@ -232,21 +232,70 @@ def fib(n):
         
     return arr[n]
 #0 or 1 knapsack proplem:
-w=[1,2,3]
-v=[60,100,120]
-c=5
-k=np.zeros((len(w)+1,c+1))
-for i in range(len(w)+1):
-    for j in range(c+1):
-        if i==0 or j==0:
-            k[i][j]=0
-        else:
-            if w[i-1]<=j:
-                k[i][j]=max(v[i-1]+k[i-1][j-w[i-1]],k[i-1][j])
+def knapsak_zero_or_one():
+    w=[1,2,3]
+    v=[60,100,120]
+    c=5
+    k=np.zeros((len(w)+1,c+1))
+   
+    for i in range(len(w)+1):
+        for j in range(c+1):
+            if i==0 or j==0:
+                k[i][j]=0
             else:
-                k[i][j]=k[i-1][j]
-print(k[len(w)][c])                
+                if w[i-1]<=j:
+                    k[i][j]=max(v[i-1]+k[i-1][j-w[i-1]],k[i-1][j])
+                else:
+                    k[i][j]=k[i-1][j]
+    print(k[len(w)][c])
+    
+#longest commen subsequence
+def longestCS:                
+    lis_1=[0,"A","B","C","B","D","A","B"]
+    lis_2=[0,"B","D","C","A","B","A"]
+
+    arr=[[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]]
+
+
+
+
+    for i in range(8):
+        for j in range(7):
+            
+            if i==0 or j==0:
+                arr[i][j]=(0,0)
+           
+             
                 
+                
+            
+            elif lis_1[i]==lis_2[j]:
+                arr[i][j]=(arr[i-1][j-1][0]+1,"q")
+
+            else:
+               
+                if arr[i-1][j][0]>=arr[i][j-1][0]:
+                    arr[i][j]=(arr[i-1][j][0],"top")
+                else:
+                    arr[i][j]=(arr[i][j-1][0],"left")
+         
+
+    lcs=[]
+    while i>0 and j>0:
+        print(i,j)
+        if arr[i][j][1]=="top":
+            i-=1
+        elif arr[i][j][1]=="left":
+            j-=1
+        elif arr[i][j][1]=="q":
+            lcs.insert(0,lis_1[i])
+            j-=1
+            i-=1
+            
+    print(lcs)        
+        
+    
+
          
             
  
