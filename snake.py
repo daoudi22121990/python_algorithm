@@ -1,4 +1,4 @@
-import numpy as np
+#import numpy as np
 #https://www.geeksforgeeks.org/algorithms-gq/recursion-gq/
 def buubleSort(arr):
     swap=True
@@ -250,7 +250,7 @@ def knapsak_zero_or_one():
     print(k[len(w)][c])
     
 #longest commen subsequence
-def longestCS:                
+def longestCS():                
     lis_1=[0,"A","B","C","B","D","A","B"]
     lis_2=[0,"B","D","C","A","B","A"]
 
@@ -292,7 +292,8 @@ def longestCS:
             j-=1
             i-=1
             
-    print(lcs)        
+    print(lcs)
+print("hello world")            
         
     
 
