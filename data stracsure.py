@@ -6,7 +6,7 @@ class Slinked_list:
         self.length=0
 
     def add(self,i,v):
-        print(self.head)
+        
         if self.head==None:
             new_node=node(v)
             self.head=new_node
@@ -62,8 +62,19 @@ class Slinked_list:
     def red(self,i):
         curent=self.head
         if i==0:
-            pass
-            
+            return curent.value
+        elif i<self.length:
+            for j in range(i):
+                curent=curent.Next
+            return curent.value    
+        else:
+            return "this index is not defined in list"
+    def print_all(self):
+        curent=self.head
+        for j in range(self.length):
+            print(curent.value,"\n")
+            curent=curent.Next
+        
             
                 
                 
@@ -87,18 +98,14 @@ obj.add(0,5)
 obj.add(1,6)
 
 obj.add(2,10)
-obj.add(0,14)
-obj.add(1,7)
+obj.add(3,28)
+
 
 #obj.add(0,17)
 #obj.remove(4)
 #obj.update(1,18)
-print(obj.head.value)
-print(obj.head.Next.value)
-print(obj.head.Next.Next.value)
-#print(obj.head.Next.Next.Next.value)
-
-print("length_obj",obj.length)
+x=obj.red(3)
+obj.print_all()
 
 
 
