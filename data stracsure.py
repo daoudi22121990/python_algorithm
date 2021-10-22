@@ -93,19 +93,37 @@ class node:
         self.value=value
         self.Next=Next
 obj=Slinked_list()
-obj.add(0,5)
+#implement stack using array:
+class stack():
+    def __init__(self,length):
+        self.arr=[]
+        self.length=length
+        self.top=0
+    def push(self,ele):
+        
+        
+        
+        if self.top<self.length:
+            self.arr.append(ele)
+            self.top+=1
+        else :
+            print("this stack overfloww")
+        
+      
+    def pop(self):
+        if self.top>0:
+           
+            self.arr.pop()
+            self.top-=1
+            
+        else:
+            print("this stack is empty")
+        
 
-obj.add(1,6)
-
-obj.add(2,10)
-obj.add(3,28)
 
 
-#obj.add(0,17)
-#obj.remove(4)
-#obj.update(1,18)
-x=obj.red(3)
-obj.print_all()
+
+
 
 
 
